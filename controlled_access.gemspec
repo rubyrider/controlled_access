@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.version     = ControlledAccess::VERSION::STRING
   spec.authors     = ["Irfan Ahmed"]
   spec.email       = ["irfandhk@gmail.com"]
-  spec.homepage    = "http://github.com/rubyrider"
+  spec.homepage    = "https://github.com/rubyrider/controlled_access"
   spec.summary     = "Provides plain old ruby class to control access database based role system"
   spec.description = "Complex platforms require dynamic role bases system where permission set is composed based on dynamic permission sets"
   spec.license     = "MIT"

@@ -1,8 +1,19 @@
 # ControlledAccess
-Short description and motivation.
+Complex platforms require dynamic role based access control system 
+where permission set is composed based on dynamic permission sets. Provides essential 
+helpers to load services like decorators, serializers etc etc. Highly configurable, 
+integration is easy.
 
 ## Usage
-How to use my plugin.
+```ruby
+  ControlledAccess.setup do |configuration|
+    configuration.enabled = true # you can disable temporary
+    configuration.permission_table = 'permissions'.freeze
+    configuration.permission_model = -> { FakePermission }
+    configuration.auto_authorisation = true
+    configuration.authorization_adapter = :pundit # cancan is also available
+  end
+```
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -18,7 +29,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install controlled_access
+$ gem install controlled_access:install
 ```
 
 ## Contributing
