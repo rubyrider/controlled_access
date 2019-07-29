@@ -7,12 +7,14 @@ module ControlledAccess
   autoload :Controllers, "controlled_access/controllers"
   autoload :Models, "controlled_access/models"
   autoload :DEFAULT_TABLE_NAME, "controlled_access/constants"
+  autoload :Rules, "controlled_access/access_controller"
   
   cattr_accessor :enabled, default: true
   cattr_accessor :auto_authorisation, default: false
   cattr_accessor :permission_table, default: DEFAULT_TABLE_NAME
   cattr_accessor :permission_model, default: -> {ControlledAccess::Permission}
   cattr_accessor :authorization_adapter, default: :pundit
+  cattr_accessor :current_user_method, default: :current_user
   
   def self.setup
     yield(self)
