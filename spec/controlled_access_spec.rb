@@ -7,13 +7,13 @@ describe ControlledAccess do
 
   describe '.authorization_adapter' do
     it 'should return default value' do
-      expect(ControlledAccess.authorization_adapter).to be == :pundit
+      expect(ControlledAccess.authorization_adapter).to be == :cancan
     end
   
     it 'should accept new value' do
-      ControlledAccess.authorization_adapter = :cancan
+      ControlledAccess.authorization_adapter = :pundit
     
-      expect(ControlledAccess.authorization_adapter).to be == :cancan
+      expect(ControlledAccess.authorization_adapter).to be == :pundit
     end
   end
 
@@ -51,13 +51,13 @@ describe ControlledAccess do
         configuration.permission_table = 'permissions'
         configuration.permission_model = -> { FakePermission }
         configuration.auto_authorisation = true
-        configuration.authorization_adapter = :cancan
+        configuration.authorization_adapter = :pundit
       end
     end
   
     it 'should take parameters in block' do
       expect(described_class.authorization_adapter).not_to be == :rolify
-      expect(described_class.authorization_adapter).to be == :cancan
+      expect(described_class.authorization_adapter).to be == :pundit
       expect(described_class.enabled).to be_falsey
       expect(described_class.auto_authorisation).to be_truthy
     end

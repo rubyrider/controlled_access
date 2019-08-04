@@ -2,7 +2,7 @@
 
 module ControlledAccess
   DEFAULT_TABLE_NAME = 'ca_permissions'.freeze
-  ALLOWED_AUTHORIZATION_ADAPTERS = [:cancan, :pundit]
+  ALLOWED_AUTHORIZATION_ADAPTERS = [:cancan, :cancancan, :pundit]
   
   module Controller
     module ACTION_NAMING
