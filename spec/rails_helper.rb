@@ -34,8 +34,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  config.add_formatter 'Fuubar'
-  config.fuubar_progress_bar_options = { :format => 'Controlled Access Test Suits! <%B> %p%% %a' }
+  # config.add_formatter 'Fuubar'
+  # config.fuubar_progress_bar_options = { :format => 'Controlled Access Test Suits! <%B> %p%% %a' }
   
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

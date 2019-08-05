@@ -2,6 +2,5 @@
 
 module ControlledAccess
   module Errors
-  
   end
 end
