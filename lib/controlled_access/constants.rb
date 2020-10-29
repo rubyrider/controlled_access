@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module ControlledAccess
-  DEFAULT_TABLE_NAME = 'ca_permissions'.freeze
+  DEFAULT_TABLE_NAME = "ca_permissions"
   ALLOWED_AUTHORIZATION_ADAPTERS = [:cancan, :cancancan, :pundit]
-  
+
   module Controller
     module ACTION_NAMING
       READ = %w(index show)
